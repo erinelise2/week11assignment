@@ -1,11 +1,11 @@
+// things from WAR GAME that may help with play...
+
 class Player {
     constructor(name) { // passing player name through
         this.name = name; // player name
         this.score = 0 // starting and default score
     }
 }
-
-// things from WAR GAME that may help with play...
 class gamePlay {
     constructor () {
         this.player1 = null;
