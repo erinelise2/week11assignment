@@ -1,3 +1,50 @@
+let numPlays = 0;
+let currentPlayer = "X";
+let currentPlays = {
+    X: [],
+    O: []
+}
+
+const winningLines= [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+]
+
+
+$(document).ready(function (){
+    $('.cell').on('click', function() {
+        numPlays ++
+        $(this).text(currentPlayer);
+        currentPlays[currentPlayer].push(parseInt($(this).attr('data-index')));
+
+        if (isWinner()) {
+            alert('Winner: ' + currentPlayer);
+        }
+       
+        currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'
+    })
+})
+
+function isWinner() {
+    if (numPlays < 5)
+        return;
+}
+
+for (let i=0; i <winningLines.length; i++) {
+    let isWinner = true;
+    for (let j=0; j < winningLines[i].length; j++) {
+        if($.inArray(winningLines[i][j], currentPlayer[currentPlayer])<0) {
+            isWinner = false;
+            break;
+        }
+    }
+}
 // things from WAR GAME that may help with play...
 
 class Player {

@@ -8,12 +8,42 @@
     text-shadow: 3px 3px 3px white;
 }
 
+.game-header {
+    color:rgb(16, 12, 62);
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+}
+
 body {
     background-color: rgb(185, 220, 238);
 }
 
-/** centering div {
+.start-btn {
+    color:rgb(51, 51, 92);
+    font-family: "Coming Soon";
+    font-size: small;
+    text-align: center;
+    align-items: center;
+}
+
+.grid-element {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    border: 1px, solid, white;
+    position: absolute;
+ }
+
+.cell {
+    height: 100px;
+    border: 1px solid white;
+    font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Coming Soon";
+    color: rgb(16, 12, 62);
+    text-shadow: 3px 3px 3px white;
 }
+
+

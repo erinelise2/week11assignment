@@ -8,44 +8,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coming+Soon">
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="index.css" rel="stylesheet" />
-    <style>
-      #gridElement [class*=row] {
-        height: 100px;
-      }
-      #gridElement [class*=col] {
-        width: 100px;
-      }
-      #gridElement svg {
-        height: 75%;
-        width: 75%;
-      }
-    </style>
-</head>
+  </head>
 
 <body>
     <div>
         <h1 class="header pt-2 pb-2">Let's Play Tic Tac Toe</h1><br>
+        <p class="game-header pt-2 pb-2">Click on the square to claim the space!</p>
     </div>
 
-    <div id="gridElement" class="container grid-element text-center align-items-center">
-        <div class="row">
-            <div class="col-4 border d-flex align-items-center justify-content" id="topRight"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="topMiddle"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="topLeft"></div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="start-btn d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group">
+              <button type="button" id="buttonCaptureEvents" class="btn btn-sm btn-outline-light">Start Game<span data-feather="play"></span></button>
+            </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-4 border d-flex align-items-center justify-content" id="middleRight"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="middleMiddle"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="middleLeft"></div>
-        </div>
-        <div class="row">
-            <div class="col-4 border d-flex align-items-center justify-content" id="bottomRight"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="bottomMiddle"></div>
-            <div class="col-4 border d-flex align-items-center justify-content" id="bottomLeft"></div>
-        </div>
+    <div class="grid-element">
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+        <div class="cell" data-index="9"></div>
     </div>
 
    
+
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
