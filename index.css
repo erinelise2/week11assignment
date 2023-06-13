@@ -1,0 +1,12 @@
+.main-header {
+    color:darkcyan;
+    text-align: center;
+    font-size:xx-large;
+    font-family: "Coming Soon";
+    text-shadow: 3px 3px 3px white;
+}
+
+body {
+    background-color: rgb(229, 145, 145);
+    align-content: center;
+}

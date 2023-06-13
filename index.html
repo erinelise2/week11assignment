@@ -4,10 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coming+Soon">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+    <style>
+      #gridElement [class*=row] {
+        height: 100px;
+      }
+      #gridElement [class*=col] {
+        width: 100px;
+      }
+      #gridElement svg {
+        height: 75%;
+        width: 75%;
+      }
+    </style>
 </head>
-<body>
 
+<body>
+    <div class="main-header">
+        <h1>Let's Play Tic Tac Toe</h1><br>
+    </div>
+
+    <div id="gridElement" class="container border-primary grid-element">
+        <div class="row">
+            <div class="col-4 border d-flex align-items-center justify-content" id="topRight"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="topMiddle"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="topLeft"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 border d-flex align-items-center justify-content" id="middleRight"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="middleMiddle"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="middleLeft"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 border d-flex align-items-center justify-content" id="bottomRight"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="bottomMiddle"></div>
+            <div class="col-4 border d-flex align-items-center justify-content" id="bottomLeft"></div>
+        </div>
+    </div>
+
+   
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
