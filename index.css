@@ -1,5 +1,5 @@
 .main-header {
-    color:darkcyan;
+    color:rgb(20, 13, 105);
     text-align: center;
     font-size:xx-large;
     font-family: "Coming Soon";
@@ -7,6 +7,11 @@
 }
 
 body {
-    background-color: rgb(229, 145, 145);
-    align-content: center;
+    background-color: rgb(185, 220, 238);
+}
+
+/** centering div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
