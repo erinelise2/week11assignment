@@ -108,7 +108,7 @@
   
   /* end of bubble animation css... i changed bubble colors and added a second color to random sections.*/
 
- /* creating image variables0... if I can ever get them on there */
+ /* creating image variables0... if I can ever get them on there https://www.youtube.com/watch?v=kRQEkTHIEyU */
  :root { 
     --orca: url('/images/orca.png');
     --sealion: url('/images/sealion.png');
@@ -116,12 +116,15 @@
     --seaturtle: url('/images/seaturtle.png');
 }
  /* css for basic page */
-body {
-    background-color: rgb(185, 220, 238);
+ body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(172, 206, 229);
     font-family: "Coming Soon";
-    box-sizing: border-box;
-    justify-content: center;
-}
+    text-shadow: 2px 2px 2px white;
+    color:rgb(20, 13, 105);
+  }
 
 .centerButton {
     display: flex;
@@ -150,101 +153,62 @@ body {
     font-weight: lighter;
 }
 
-.board {
+#board {
     display: grid;
-    justify-content: center;
     grid-template-columns: 100px 100px 100px;
-    border: 1px, dashed;
-    cursor:pointer;
-}
-    
-.cell {
-    height: 100px;
-    border: 1px solid rgb(16, 12, 62);
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
+    position: relative;
+    color:rgb(20, 13, 105)
+  }
+  
+  .cell {
+    border: 1px solid rgb(20, 13, 105);
     font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgb(20, 13, 105);
-    text-shadow: 3px 3px 3px white;
-    cursor: pointer;
-    background-color: white;
-    opacity: 50%;
-}
-
-#endMessage-win {
-    color:  rgb(16, 12, 62);
-    margin: 20px;
-    font-size: xx-large;
-    font-weight: bolder;
-    text-shadow: 3px 3px 3px white;
-}
-
-#endMessage-draw {
-    color:  rgb(16, 12, 62);
-    margin: 20px;
-    font-size: xx-large;
-    font-weight: bolder;
-    text-shadow: 3px 3px 3px white;
-}
-
-.hidden {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+ 
+#endGame {
+    text-align: center;
+    padding: 25px;
+    margin: 25px;
+    color:rgb(20, 13, 105)
+  }
+  
+  .start-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    color:rgb(20, 13, 105)
+  }
+  
+  .hidden {
     display: none;
-}
-
-.visible {
+  }
+  
+  .visible {
     display: block;
-}
-
-.footer-text {
+  }
+  
+  .x-hover:hover::after {
+    content: "x";
+    opacity: 0.4;
+  }
+  
+  .o-hover:hover::after {
+    content: "0";
+    opacity: 0.4;
+  }
+  
+  .footer-text {
     font-size: x-small;
     margin-left: 10px;
     font-style: italic;
-}
-
-
-/* .cell.x, .cell.x2,
-.cell.y, .cell.y2{
-    cursor: not-allowed;
-}
-
-.board.x .cell:not(.x):not(.y):hover{
-    background: var(--orca)rgb(185, 220, 238)  no-repeat;
-    opacity: 0.8;
-}
-
-.board.x2 .cell:not(.x2):not(.y2):hover{
-    background: var(--rays) rgb(185, 220, 238)no-repeat;
-    opacity: 0.8;
-}
-
-.board.y .cell:not(.y):not(.x):hover{
-    background: var(--sealion)rgb(185, 220, 238) no-repeat;
-    opacity: 0.8;
-}
-
-.board.y2 .cell:not(.y2):not(.x2):hover{
-    background: var(--seaturtle)rgb(185, 220, 238) no-repeat;
-    opacity: 0.8;
-} */
-
-/* .cell.x {
-    background: var(--orca) no-repeat;
-    background-size: cover;
-}
-
-.cell.x2 {
-    background: var(--rays) no-repeat;
-    background-size: cover;
-}
-
-
-.cell.y {
-    background: var(--sealion) no-repeat;
-    background-size: cover;
-}
-
-.cell.y2 {
-    background: var(--seaturtle) no-repeat;
-    background-size: cover;
-} */
+    align-items: left;
+  }
+  

@@ -12,7 +12,7 @@
 
 <body>
 
-<!-- Title header section -->
+<!-- Title header section https://www.youtube.com/watch?v=kRQEkTHIEyU -->
 <div class="centerButton">
     <h1 class="header pt-4">Under the Sea Tic Tac Toe</h1>
     <p class="game-header pb-2">Click on the square to claim the space!</p>
@@ -42,52 +42,35 @@
     </div>
 </div>
 
+
 <!-- Grid for tic tac toe game -->
  
+<!-- Game Board and play https://www.youtube.com/watch?v=AGbY0wVLdJI -->
 <div class="row">
-    <div class="board" id="board">
-        <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
-        <div class="cell" data-index="9"></div>
-    </div>
-  </div>
-
-<!-- Winner Announcement -->
-  <div class="winner-msg centerButton " id="endMessage-win">
-    <h2 class="pt-2 hidden" id="game-win-text">We have a winner!</h2>
-    <div class="win">
-        <button id="restartBtn" class="btn btn-sm btn-outline-light p-2 start-btn hidden">Let's Play Again</button>
-    </div>
-</div>
-
-  <!-- Draw Announcement -->
- <div class="draw-msg centerButton" id="endMessage-draw">
-    <h2 class="pt-2 hidden" id="game-draw-text">Game is a Draw.</h2>
-    <div class="draw">
-        <button id="drawBtn" class="btn btn-sm btn-outline-light p-2 start-btn hidden">Let's Play Again</button>
-    </div>
-</div>
-
-  <!-- Game Restart Button  -->
-
-<!-- <div class="centerButton"> 
-    <div class="btn-group">
-       <button type="button" id="startButton" class="btn btn-sm btn-outline-light m-4 p-2 start-btn">Let's Play Again!<span data-feather="reset"></span></button>
+    <div id="board" class="board">
+        <div data-index="1" class="cell"></div>
+        <div data-index="2" class="cell"></div>
+        <div data-index="3" class="cell"></div>
+        <div data-index="4" class="cell"></div>
+        <div data-index="5" class="cell"></div>
+        <div data-index="6" class="cell"></div>
+        <div data-index="7" class="cell"></div>
+        <div data-index="8" class="cell"></div>
+        <div data-index="9" class="cell"></div>
    </div>
-</div>  -->
-
-<!-- Reset button -->
-
-<div class="footer">
-    <hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
 </div>
+
+<div id="endGame" class="hidden">
+    <h2 id="endGameText"></h2><br>
+    <button class="start-btn" id="start-btn">Let's Play Again!</button>
+</div>
+
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
 </body>
+<footer>
+    <div class="footer">
+       <br><br><br><hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
+    </div>
+    </footer>
 </html>
