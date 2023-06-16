@@ -11,29 +11,20 @@
   </head>
 
 <body>
-<!-- Start Game Window (found option on youtube when I was trying to find out how to change the letters to my animal drawings. Love this set up!)-->
 
-<div class='open-game'>
-   <h1 class="characterSelect header">Select Your Ocean Animal</h1>
-    <div class ="character">
-        <div class="img">
-            <img src="images/orca.png" alt="image of orca" class="currentAnimalImage" data-id="x">
-            <img src="images/sealion.png" alt="image of sea lion" class="currentAnimalImage" data-id="y">
-        </div>
-        <div class="img">
-            <img src="images/rays.png" alt="image of rays" class="currentAnimalImage" data-id="x2">
-            <img src="images/seaturtle.png" alt="image of sea seaturtle" class="currentAnimalImage" data-id="y2">
-        </div>
-    </div>
-   <div class="start centerButton">
-        <button id="startBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Let's Play Tic Tac Toe</button>
-    </div>
-</div>
 <!-- Title header section -->
-<div>
-    <h1 class="header m-4 pt-2 pb-2">Under the Sea Tic Tac Toe</h1><br>
-   <p class="game-header pt-2 pb-2">Click on the square to claim the space!</p>
-</div>
+<div class="centerButton">
+    <h1 class="header pt-4">Under the Sea Tic Tac Toe</h1>
+    <p class="game-header pb-2">Click on the square to claim the space!</p>
+    <div class="row">
+        <div class="animalGroup">
+            <img src="images/orca.png" alt="image of orca" class="animalImage">
+            <img src="images/sealion.png" alt="image of sea lion" class="animalImage">
+            <img src="images/rays.png" alt="image of three cownose rays" class="animalImage">
+            <img src="images/seaturtle.png" alt="image of sea turtle" class="animalImage">
+        </div>
+    </div>
+   </div>
 
 <!-- Found a css/html background for animated bubbles -->
 <div class="sticky">
@@ -53,34 +44,34 @@
 
 <!-- Grid for tic tac toe game -->
  
-<div class="container">
+<div class="row">
     <div class="board" id="board">
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
-        <div class="cell bg-white" data-cell></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+        <div class="cell" data-index="9"></div>
     </div>
   </div>
-  <!-- Winner Announcement -->
 
-  <div class="winner-msg centerButton">
-    <h2 class="pt-2">We have a winner!</h2>
-    <div class="winner">
-        <button id="restartBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Let's Play Again</button>
+<!-- Winner Announcement -->
+  <div class="winner-msg centerButton " id="endMessage">
+    <h2 class="pt-2 hidden" id="game-end-text">We have a winner!</h2>
+    <div class="win">
+        <button id="restartBtn" class="btn btn-sm btn-outline-light p-2 start-btn hidden">Let's Play Again</button>
     </div>
 </div>
 
   <!-- Draw Announcement -->
- <div class="draw-msg centerButton">
+ <div class="draw-msg centerButton hidden" id="endMessage">
     <div class="draw">
-        <h2 class="pt-2">Game is a Draw.</h2>
+        <h2 class="pt-2 hidden">Game is a Draw.</h2>
     </div>
-        <button id="drawBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Play Again</button>
+        <button id="drawBtn" class="btn btn-sm btn-outline-light p-2 start-btn hidden">Let's Play Again</button>
     </div>
 </div>
 
@@ -92,40 +83,11 @@
    </div>
 </div>  -->
 
-<!-- Modal Things to Try -->
-
-<!-- <div class="modal text-center" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Winner</h4>
-            </div>
-            <div class="modal-body">
-                <p id="modal-text"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Play Again!</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- Announce end of game
-    <div class='display announcer hide'>
-        <div class="controls">
-            <button  class="btn btn-sm btn-outline-light m-2 p-2 start-btn" id="reset">Reset Board</button>
-        </div>
-    </div> -->
-
 <!-- Reset button -->
-    <!--<div class="centerButton hide"> 
-     <div class="btn-group">
-        <button type="button" id="buttCaptureEvents" class="btn btn-sm btn-outline-light m-2 p-2 reset-btn">Reset Game!<span data-feather="play"></span></button>
-    </div>
-</div> 
-    </div>
+
+<div class="footer">
+    <hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
 </div>
-</div> -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
 </body>
