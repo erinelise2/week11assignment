@@ -172,10 +172,20 @@ body {
     opacity: 50%;
 }
 
-#endMessage {
+#endMessage-win {
     color:  rgb(16, 12, 62);
     margin: 20px;
-    font-size: large;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-shadow: 3px 3px 3px white;
+}
+
+#endMessage-draw {
+    color:  rgb(16, 12, 62);
+    margin: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-shadow: 3px 3px 3px white;
 }
 
 .hidden {

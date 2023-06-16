@@ -38,29 +38,6 @@ $(document).ready(function () {
   });
 });
 
-function playAgain() {
-    numPlays = 0;
-    gameEnd = false;
-    currentPlayer = "X";
-    currentPlays = {
-            X: [],
-            O: [],
-        };
-    $(".cell, #endMessage").text("");
-}
-
-function showGameResult(type) {
-    gameEnd = true;
-    if (type === 'win') {
-        $('#endMessage').text(currentPlayer + " Wins!");
-    } else {
-        $('#endMessage').text("Game is a draw. Play again!");
-    }
-
-    $("#endMessage");
-    start-btn.addEventListener( 'click', playAgain);
-}
-
 function playerWins() {
   if (numPlays < 5) 
     return;
@@ -82,5 +59,27 @@ function gameDraw() {
     return numPlays == 9;
 }
 
+function showGameResult(type) {
+    gameEnd = true;
+    if (type === 'win') {
+        $('#endMessage-win').text(currentPlayer + " Wins!"); 
+    } else {
+        $('#endMessage-draw').text("Game is a draw. Play again!");
+    }
+
+    $("#endMessage");
+    start-btn.addEventListener( 'click', playAgain);
+}
+
+function playAgain() {
+    numPlays = 0;
+    gameEnd = false;
+    currentPlayer = "X";
+    currentPlays = {
+            X: [],
+            O: [],
+        };
+    $(".cell, #endMessage").text("");
+}
 
 })(jQuery);
