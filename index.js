@@ -5,16 +5,16 @@
     const playerO = "o";
     let currentPlayer = playerX;
 
-// setting data index from cells to note when winning line created //
+// setting data index array from cells to note when winning line created //
     const winningLines = [
-        { combo: [1, 2, 3]},
-        { combo: [4, 5, 6]},
-        { combo: [7, 8, 9]},
-        { combo: [1, 4, 7]},
-        { combo: [2, 5, 8]},
-        { combo: [3, 6, 9]},
-        { combo: [1, 5, 9]},
-        { combo: [3, 5, 7]},
+        {combo: [1, 2, 3]},
+        {combo: [4, 5, 6]},
+        {combo: [7, 8, 9]},
+        {combo: [1, 4, 7]},
+        {combo: [2, 5, 8]},
+        {combo: [3, 6, 9]},
+        {combo: [1, 5, 9]},
+        {combo: [3, 5, 7]},
     ];
     
 //creating board to start off as empty array//
@@ -24,8 +24,8 @@
 // calling sections of html to interact //
     const endGameDiv = document.getElementById("endGame");
     const endGameText = document.getElementById("endGameText");
-    const playAgain = document.getElementById("start-btn");
-    playAgain.addEventListener("click", startNewGame);
+    const playAgain = document.getElementById("startButton");
+    playAgain.addEventListener('click', startNewGame);
     
 // something fun I found on a youtube https://www.youtube.com/watch?v=fPew9OI2PnA, so I went and found a sound that works for my page https://soundbible.com/1137-Bubbles.html//
     const gameWonSound = new Audio("sounds/bubbles.wav");
