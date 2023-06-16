@@ -11,48 +11,121 @@
   </head>
 
 <body>
-    <section class="sticky">
-        <div class="bubbles">
-            <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          <div class="bubble"></div>
-          
+<!-- Start Game Window (found option on youtube when I was trying to find out how to change the letters to my animal drawings. Love this set up!)-->
+
+<div class='open-game'>
+   <h1 class="characterSelect header">Select Your Ocean Animal</h1>
+    <div class ="character">
+        <div class="img">
+            <img src="images/orca.png" alt="image of orca" class="currentAnimalImage" data-id="x">
+            <img src="images/sealion.png" alt="image of sea lion" class="currentAnimalImage" data-id="y">
         </div>
-      </section>
-    <div>
-        <h1 class="header pt-2 pb-2">Let's Play Tic Tac Toe</h1><br>
-        <p class="game-header pt-2 pb-2">Click on the square to claim the space!</p>
+        <div class="img">
+            <img src="images/rays.png" alt="image of rays" class="currentAnimalImage" data-id="x2">
+            <img src="images/seaturtle.png" alt="image of sea seaturtle" class="currentAnimalImage" data-id="y2">
+        </div>
     </div>
+   <div class="start centerButton">
+        <button id="startBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Let's Play Tic Tac Toe</button>
+    </div>
+</div>
+<!-- Title header section -->
+<div>
+    <h1 class="header m-4 pt-2 pb-2">Under the Sea Tic Tac Toe</h1><br>
+   <p class="game-header pt-2 pb-2">Click on the square to claim the space!</p>
+</div>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="start-btn d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+<!-- Found a css/html background for animated bubbles -->
+<div class="sticky">
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+</div>
 
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group">
-              <button type="button" id="buttonCaptureEvents" class="btn btn-sm btn-outline-light">Play Tic Tac Toe!<span data-feather="play"></span></button>
+<!-- Grid for tic tac toe game -->
+ 
+<div class="container">
+    <div class="board" id="board">
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+        <div class="cell bg-white" data-cell></div>
+    </div>
+  </div>
+  <!-- Winner Announcement -->
+
+  <div class="winner-msg centerButton">
+    <h2 class="pt-2">We have a winner!</h2>
+    <div class="winner">
+        <button id="restartBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Let's Play Again</button>
+    </div>
+</div>
+
+  <!-- Draw Announcement -->
+ <div class="draw-msg centerButton">
+    <div class="draw">
+        <h2 class="pt-2">Game is a Draw.</h2>
+    </div>
+        <button id="drawBtn" class="btn btn-sm btn-outline-light p-2 start-btn">Play Again</button>
+    </div>
+</div>
+
+  <!-- Game Restart Button  -->
+
+<!-- <div class="centerButton"> 
+    <div class="btn-group">
+       <button type="button" id="startButton" class="btn btn-sm btn-outline-light m-4 p-2 start-btn">Let's Play Again!<span data-feather="reset"></span></button>
+   </div>
+</div>  -->
+
+<!-- Modal Things to Try -->
+
+<!-- <div class="modal text-center" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Winner</h4>
             </div>
-          </div>
+            <div class="modal-body">
+                <p id="modal-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Play Again!</button>
+            </div>
         </div>
-    <div class="grid-element">
-        <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
-        <div class="cell" data-index="9"></div>
     </div>
-    </main>
+</div> -->
 
+<!-- Announce end of game
+    <div class='display announcer hide'>
+        <div class="controls">
+            <button  class="btn btn-sm btn-outline-light m-2 p-2 start-btn" id="reset">Reset Board</button>
+        </div>
+    </div> -->
+
+<!-- Reset button -->
+    <!--<div class="centerButton hide"> 
+     <div class="btn-group">
+        <button type="button" id="buttCaptureEvents" class="btn btn-sm btn-outline-light m-2 p-2 reset-btn">Reset Game!<span data-feather="play"></span></button>
+    </div>
+</div> 
+    </div>
+</div>
+</div> -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
 </body>

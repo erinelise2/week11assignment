@@ -1,14 +1,5 @@
-
-body,html{
-    width:100%;
-    height: 100%;
-  }
-  body{
-    margin:0;
-    padding:0;
-    background:#29b6f6;
-  }
-  .bubbles{
+/* bubble animation from https://codepen.io/Momika/pen/ydaWmQ */
+.bubbles{
     position:absolute;
     width:100%;
     height: 100%;
@@ -22,7 +13,7 @@ body,html{
     bottom:-100px;
     width:40px;
     height: 40px;
-    background:#f1f1f1;
+    background: rgb(51, 51, 92);
     border-radius:50%;
     opacity:0.5;
     animation: rise 10s infinite ease-in;
@@ -31,6 +22,7 @@ body,html{
     width:40px;
     height:40px;
     left:10%;
+    background: white;
     animation-duration:8s;
   }
   .bubble:nth-child(2){
@@ -46,6 +38,7 @@ body,html{
     left:35%;
     animation-duration:7s;
     animation-delay:2s;
+    background: white;
   }
   .bubble:nth-child(4){
     width:80px;
@@ -58,6 +51,7 @@ body,html{
     width:35px;
     height:35px;
     left:55%;
+    background: white;
     animation-duration:6s;
     animation-delay:1s;
   }
@@ -74,6 +68,7 @@ body,html{
     left:70%;
     animation-duration:12s;
     animation-delay:2s;
+    background: white;
   }
   .bubble:nth-child(8){
     width:25px;
@@ -88,6 +83,7 @@ body,html{
     left:70%;
     animation-duration:5s;
     animation-delay:1s;
+    background: white;
   }
   .bubble:nth-child(10){
     width:90px;
@@ -110,10 +106,58 @@ body,html{
     }
   }
   
+  /* end of bubble animation css... i changed bubble colors and added a second color to random sections.*/
+ /* creating image variables */
+
+ :root { 
+    --orca: url('/images/orca.png');
+    --sealion: url('/images/sealion.png');
+    --rays: url('/images/rays.png');
+    --seaturtle: url('/images/seaturtle.png');
+}
+
+body {
+    background-color: rgb(185, 220, 238);
+    font-family: "Coming Soon";
+    box-sizing: border-box;
+}
+
+/* start window */
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.open-game .character .img > img {
+    cursor: pointer;
+}
+
+.open-game .character .img > img:hover {
+    background-color: white;
+}
+
+.open-game.hide {
+    display: none;
+}
+
+.open-game {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentAnimalImage {
+    width: 95px;
+    height: auto;
+}
+
 .header {
     color:rgb(20, 13, 105);
     text-align: center;
-    font-family: "Coming Soon";
     font-weight:500;
     font-size: 45pt;
     font-display: flex;
@@ -127,35 +171,73 @@ body,html{
     font-weight: lighter;
 }
 
-body {
-    background-color: rgb(185, 220, 238);
-}
-
-.start-btn {
-    color:rgb(51, 51, 92);
-    font-family: "Coming Soon";
-    font-size: small;
-    text-align: center;
-    align-items: center;
-}
-
-.grid-element {
+.board {
     display: grid;
+    justify-content: center;
     grid-template-columns: 100px 100px 100px;
-    border: 1px, solid, white;
-    position: absolute;
- }
-
+    border: 1px, solid
+}
+    
 .cell {
     height: 100px;
-    border: 1px solid white;
+    border: 1px solid rgb(16, 12, 62);
     font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Coming Soon";
-    color: rgb(16, 12, 62);
+    color: rgb(20, 13, 105);
     text-shadow: 3px 3px 3px white;
 }
 
+.centerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+/* .cell.x, .cell.x2,
+.cell.y, .cell.y2{
+    cursor: not-allowed;
+}
+
+.board.x .cell:not(.x):not(.y):hover{
+    background: var(--orca)rgb(185, 220, 238)  no-repeat;
+    opacity: 0.8;
+}
+
+.board.x2 .cell:not(.x2):not(.y2):hover{
+    background: var(--rays) rgb(185, 220, 238)no-repeat;
+    opacity: 0.8;
+}
+
+.board.y .cell:not(.y):not(.x):hover{
+    background: var(--sealion)rgb(185, 220, 238) no-repeat;
+    opacity: 0.8;
+}
+
+.board.y2 .cell:not(.y2):not(.x2):hover{
+    background: var(--seaturtle)rgb(185, 220, 238) no-repeat;
+    opacity: 0.8;
+} */
+
+/* .cell.x {
+    background: var(--orca) no-repeat;
+    background-size: cover;
+}
+
+.cell.x2 {
+    background: var(--rays) no-repeat;
+    background-size: cover;
+}
+
+
+.cell.y {
+    background: var(--sealion) no-repeat;
+    background-size: cover;
+}
+
+.cell.y2 {
+    background: var(--seaturtle) no-repeat;
+    background-size: cover;
+} */
