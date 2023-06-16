@@ -16,14 +16,16 @@
     background: rgb(51, 51, 92);
     border-radius:50%;
     opacity:0.5;
-    animation: rise 10s infinite ease-in;
+    animation: rise 10s infinite ease-in-out;
   }
   .bubble:nth-child(1){
     width:40px;
     height:40px;
     left:10%;
     background: white;
+    content: var(--orca);
     animation-duration:8s;
+
   }
   .bubble:nth-child(2){
     width:20px;
@@ -31,6 +33,7 @@
     left:20%;
     animation-duration:5s;
     animation-delay:1s;
+
   }
   .bubble:nth-child(3){
     width:50px;
@@ -39,6 +42,7 @@
     animation-duration:7s;
     animation-delay:2s;
     background: white;
+    content: var(--sealion);
   }
   .bubble:nth-child(4){
     width:80px;
@@ -52,6 +56,7 @@
     height:35px;
     left:55%;
     background: white;
+    content: var(--seaturtle);
     animation-duration:6s;
     animation-delay:1s;
   }
@@ -69,6 +74,7 @@
     animation-duration:12s;
     animation-delay:2s;
     background: white;
+    content: var(--rays);
   }
   .bubble:nth-child(8){
     width:25px;
@@ -84,6 +90,7 @@
     animation-duration:5s;
     animation-delay:1s;
     background: white;
+    content: var(--orca);
   }
   .bubble:nth-child(10){
     width:90px;
@@ -106,7 +113,7 @@
     }
   }
   
-  /* end of bubble animation css... i changed bubble colors and added a second color to random sections.*/
+  /* end of bubble animation css... i changed bubble colors and added a second color to random sections... not sure how to make it be at the bottom of the page when the winning alert pops up*/
 
  /* creating image variables0... if I can ever get them on there https://www.youtube.com/watch?v=kRQEkTHIEyU */
  :root { 
@@ -160,9 +167,9 @@
     cursor: pointer;
     position: relative;
     color:rgb(20, 13, 105)
-  }
+}
   
-  .cell {
+.cell {
     border: 1px solid rgb(20, 13, 105);
     font-size: 50px;
     display: flex;
@@ -170,7 +177,7 @@
     align-items: center;
     color: rgb(20, 13, 105);
     background-color: rgba(255, 255, 255, 0.5);
-  }
+}
   
  
 #endGame {
@@ -178,37 +185,37 @@
     padding: 25px;
     margin: 25px;
     color:rgb(20, 13, 105)
-  }
+}
   
-  .start-btn {
+.start-btn {
     background-color: transparent;
     border: 1px solid white;
     padding: 10px;
     color:rgb(20, 13, 105)
-  }
+}
   
-  .hidden {
+.hidden {
     display: none;
-  }
+}
   
-  .visible {
+.visible {
     display: block;
-  }
+}
   
-  .x-hover:hover::after {
+.x-hover:hover::after {
     content: "x";
     opacity: 0.4;
-  }
+}
   
-  .o-hover:hover::after {
-    content: "0";
+.o-hover:hover::after {
+    content: "o";
     opacity: 0.4;
-  }
+}
   
-  .footer-text {
+.footer-text {
     font-size: x-small;
     margin-left: 10px;
     font-style: italic;
     align-items: left;
-  }
+}
   
