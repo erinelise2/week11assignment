@@ -129,7 +129,7 @@ body {
     align-items: center;
     background: radial-gradient(ellipse at top, #6473a2, transparent),            radial-gradient(ellipse at bottom, #79acd8, transparent);
     font-family: "Coming Soon";
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 0.5px 0.5px 0.5px white;
     color:rgb(20, 13, 105);
 }
 
@@ -149,6 +149,17 @@ body {
     text-shadow: 3px 3px 3px white;
 }
 
+.playerMessage {
+    text-align: center;  
+    font-weight:bolder;
+    font-size: 25pt;
+    border: 1px solid rgb(20, 13, 105);
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 25px;
+    margin: 50px;
+    color:rgb(20, 13, 105); 
+}
+
 .animalGroup {
     display: flex;
     flex-direction: row;
@@ -164,7 +175,7 @@ body {
     color:rgb(16, 12, 62);
     text-align: center;
     font-style: italic;
-    font-weight: lighter;
+    font-size: 15pt;
 }
 
 #board {
@@ -192,15 +203,15 @@ body {
     border: 1px solid rgb(20, 13, 105);
     background-color: rgba(255, 255, 255, 0.25);
     padding: 25px;
-    margin: 25px;
+    margin: 50px;
     color:rgb(20, 13, 105);
 }
   
 .start-btn {
-    background-color: white;
-    border: 2px solid rgb(20, 13, 105);
+    background-color: rgb(199, 212, 240);
+    border: 1px solid rgb(20, 13, 105);
     padding: 10px;
-    color:rgb(20, 13, 105)
+    color:rgb(20, 13, 105);
 }
   
 .hidden {
@@ -210,7 +221,8 @@ body {
 .visible {
     display: block;
 }
-  
+
+/* hover classes for the cells, adam youtube */
 .x-hover:hover::after {
     content: "x";
     opacity: 0.4;
@@ -221,7 +233,8 @@ body {
     opacity: 0.4;
 }
   
-.footer {
-    font-size: x-small;
+footer {
+    font-size: small;
     font-style: italic;
+    font-weight: bolder;
 }

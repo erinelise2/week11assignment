@@ -1,11 +1,13 @@
 (function($, undefined) {
     'use strict'
+    //query selector selects all htmnl elements with the class of cell... which are the nine cells that make up the grid.// 
     const cells = document.querySelectorAll(".cell");
-    const playerX = "x";
+    const playerHeader = document.querySelector('.playerMessage'); 
+    const playerX = "x"; //player variables... want to make these images //
     const playerO = "o";
     let currentPlayer = playerX;
 
-// setting data index array from cells to note when winning line created //
+// setting data index array from cells to note when winning line created. one of the functions below will load cell index for each player and check before next move.//
     const winningLines = [
         {combo: [1, 2, 3]},
         {combo: [4, 5, 6]},
@@ -21,67 +23,63 @@
     const gameBoard = Array(cells.length);
     gameBoard.fill(null);
     
-// calling sections of html to interact //
+// calling sections of html to interact get element by id pulls from id tag in html. byClassName is for class. eventlisteners attach event handlers to an element. the event used in this is the click of either the cells or a button. following click a function is executed.//
     const endGameDiv = document.getElementById("endGame");
     const endGameText = document.getElementById("endGameText");
     const playAgain = document.getElementById("startButton");
     playAgain.addEventListener('click', startNewGame);
     
-// something fun I found on a youtube https://www.youtube.com/watch?v=fPew9OI2PnA, so I went and found a sound that works for my page https://soundbible.com/1137-Bubbles.html//
+// something fun I found on a youtube https://www.youtube.com/watch?v=fPew9OI2PnA, so I went and found a sound that works for my page https://soundbible.com/1137-Bubbles.html //
     const gameWonSound = new Audio("sounds/bubbles.wav");
     
 // click event listener for when each cell is selected. The hover text was from a youtube and added a little more interactive quality to the board. //
-
-    cells.forEach((cell) => cell.addEventListener("click", cellSelect));
-    
+    cells.forEach((cell) => cell.addEventListener("click", gamePlay));
+  
+// hover cannot stay until clicked. the hover will be whichever current player symbol is.  can only select blank cells to hover over or eventually select. no turning one into the other//
 function setHoverText() {
-// hover cannot stay until clicked //
     cells.forEach((cell) => {
         cell.classList.remove("x-hover");
         cell.classList.remove("o-hover");
       });
-    
-// the hover will be whichever current player symbol is //
     const hoverClass = `${currentPlayer}-hover`;
-    
-// can only select blank cells to hover over or eventually select. no turning one into the other //
     cells.forEach((cell) => {
         if (cell.innerText == "") {
             cell.classList.add(hoverClass);
             }
       });
-}
+    } //end of setHoverText function //
         
 setHoverText(); // running hover function at beginning of game/page open //
     
-// game play //
-function cellSelect(event) {
+// game play. only empty cells can be selected. cells receive currentPlayer symbol and move is recorded in array  //
+function gamePlay(event) {
     if (endGame.classList.contains("visible")) {
         return;
         }
-    // empty cells can be selected //
-    const cell = event.target;
+       const cell = event.target;
     const cellNumber = cell.dataset.index;
     if (cell.innerText != "") {
         return;
         }
-    // cells receive currentPlayer symbol and move is recorded in array //
-    if (currentPlayer === playerX) {
+    if (currentPlayer === playerX) { //switching players. other found method was (x)? x:o//
         cell.innerText = playerX;
         gameBoard[cellNumber - 1] = playerX;
         currentPlayer = playerO;
+        playerHeader.textContent = `It is player ${currentPlayer}'s turn!`;
         } else {
         cell.innerText = playerO;
         gameBoard[cellNumber - 1] = playerO;
         currentPlayer = playerX;
+        playerHeader.textContent = `It is player ${currentPlayer}'s turn!`;
       }  
-    setHoverText(); // running hover function to not hover over filled square //
-    checkWinner(); // calling function to make sure the winning line combos  have not been selected //
-}
+    setHoverText(); // running hover function to not hover over filled square inside of playing function//
+    checkWinner(); // calling function inside game play to make sure the winning line combos  have not been selected //
+    } // end of gamePlay function //
     
-function checkWinner() { //checking cells for winning line combos //
+//creating check winner function to cells for winning line combos created earlier. arrays are n-1 for location. extracting data from the array: https://www.youtube.com/watch?v=6JsGYEo0vV4&t=0s //
+function checkWinner() { 
     for (const winningLine of winningLines) {
-        const { combo} = winningLine;
+        const {combo} = winningLine;
         const cellValue1 = gameBoard[combo[0] - 1];
         const cellValue2 = gameBoard[combo[1] - 1];
         const cellValue3 = gameBoard[combo[2] - 1];
@@ -91,15 +89,16 @@ function checkWinner() { //checking cells for winning line combos //
           cellValue1 === cellValue3
         ) {
           endGameScreen(cellValue1);
-          return; //return used here to make sure it does not call a draw if all squares are used to when. //
+          return; //return used here to make sure it does not call a draw if all squares are used, but there is a winner. //
         }
       }
     const boardFull = gameBoard.every((cell) => cell !== null); // draw situation, full board //
     if (boardFull) {
         endGameScreen(null);
         }
-}
-// function for end game pop up calling winner and resetting with button. this will make the hidden items on html visible for only these conditions of a game win or a full board. also playing the sound idea I found //
+    } // end of checkWinner function //
+
+// function for end game pop up calling winner and resetting with button. this will make the hidden items on html visible for only these conditions: a game win or a full board. also plays the sound idea I found. the background bubbles are in this hidden div as well, so they will start floating when the window pops up. //
 function endGameScreen(endText) {
     let text = "Game is a draw. Play again!";
     if (endText != null) {
@@ -108,12 +107,13 @@ function endGameScreen(endText) {
     endGameDiv.className = "visible";
     endGameText.innerText = text;
     gameWonSound.play();
-}
-// resetting game to keep playing. connected to button with addEventListener. next up will be whoever did not win... so if x won, o starts. //
+    } // end of endGameScreen function //
+
+// resetting game to keep playing. connected to button with addEventListener. next up will be whoever did not win... so if x won, o starts. if you want x to start every time, you just set the players again like original call.//
 function startNewGame() {
     endGameDiv.className = "hidden";
     gameBoard.fill(null);
     cells.forEach((cell) => (cell.innerText = ""));
-}
+    } // end of startNewGame function //
 
 })(jQuery);

@@ -12,51 +12,34 @@
 
 <body>
 
-<!-- Title header section https://www.youtube.com/watch?v=kRQEkTHIEyU -->
+<!-- Title header section. Started trying some ideas from https://www.youtube.com/watch?v=kRQEkTHIEyU ... ultimately did not get the characters loaded onto the x and o to play, but I did format and wanted them on the page. -->
 <div class="centerButton">
     <h1 class="header pt-4">Under the Sea Tic Tac Toe</h1>
        <div class="row">
         <div class="animalGroup">
-            <img src="images/orca.png" alt="image of orca" class="animalImage">
-            <img src="images/sealion.png" alt="image of sea lion" class="animalImage">
-            <img src="images/rays.png" alt="image of three cownose rays" class="animalImage">
-            <img src="images/seaturtle.png" alt="image of sea turtle" class="animalImage">
+            <img src="images/orca.png" alt="image of orca" class="animalImage" id="xImage">
+            <img src="images/sealion.png" alt="image of sea lion" class="animalImage" id="oImage">
+            <img src="images/rays.png" alt="image of three cownose rays" class="animalImage" id="x2Image">
+            <img src="images/seaturtle.png" alt="image of sea turtle" class="animalImage" id="o2Image">
         </div>
     </div>
+    <h2 class="playerMessage">It is player X's turn.</h2>
     <p class="game-header p-2">Click on the square to claim the space!</p>
    </div>
 
-
-<!-- <div class="sticky">
-    <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-    </div>
-</div> -->
-
-
-<!-- Grid for tic tac toe game -->
- 
-<!-- Game Board and play https://www.youtube.com/watch?v=AGbY0wVLdJI -->
+<!-- Grid for tic tac toe game --> 
+<!-- Game Board and play. Liked the grid from this youtube https://www.youtube.com/watch?v=AGbY0wVLdJI his code looked okay too, but it did not feel familiar enough to be able to confidently manipulate and understand. -->
 <div class="row">
     <div id="board" class="board">
-        <div data-index="1" class="cell"></div>
-        <div data-index="2" class="cell"></div>
-        <div data-index="3" class="cell"></div>
-        <div data-index="4" class="cell"></div>
-        <div data-index="5" class="cell"></div>
-        <div data-index="6" class="cell"></div>
-        <div data-index="7" class="cell"></div>
-        <div data-index="8" class="cell"></div>
-        <div data-index="9" class="cell"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+        <div class="cell" data-index="9"></div>
    </div>
 </div>
 
@@ -77,12 +60,14 @@
             <div class="bubble"></div>
             <div class="bubble"></div>
         </div>
-    </div>
+    </div> 
+<!-- closing bubble div -->
 </div>
-
+<!-- closes endGame/hidden div -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
 </body>
+<!-- footer class... -->
 <footer>
     <div class="footer">
        <br><br><br><hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
