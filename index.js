@@ -65,12 +65,12 @@ function gamePlay(event) {
         cell.innerText = playerX;
         gameBoard[cellNumber - 1] = playerX;
         currentPlayer = playerO;
-        playerHeader.textContent = `It is player ${currentPlayer}'s turn!`;
+        playerHeader.textContent = `Player ${currentPlayer}'s Turn`;
         } else {
         cell.innerText = playerO;
         gameBoard[cellNumber - 1] = playerO;
         currentPlayer = playerX;
-        playerHeader.textContent = `It is player ${currentPlayer}'s turn!`;
+        playerHeader.textContent = `Player ${currentPlayer}'s Turn`;
       }  
     setHoverText(); // running hover function to not hover over filled square inside of playing function//
     checkWinner(); // calling function inside game play to make sure the winning line combos  have not been selected //

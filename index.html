@@ -23,8 +23,9 @@
             <img src="images/seaturtle.png" alt="image of sea turtle" class="animalImage" id="o2Image">
         </div>
     </div>
-    <h2 class="playerMessage">It is player X's turn.</h2>
-    <p class="game-header p-2">Click on the square to claim the space!</p>
+    <!-- playerMessage pulls currentPlayer from js to post on html -->
+    <h2 class="playerMessage p-2 pb-4">Click on the square to begin the game!</h2> 
+    <!-- <p class="game-header p-2">Click on the square to claim the space!</p> -->
    </div>
 
 <!-- Grid for tic tac toe game --> 
@@ -44,7 +45,7 @@
 </div>
 
 <div id="endGame" class="hidden">
-    <h2 id="endGameText"></h2><br>
+    <h2 id="endGameText"></h2>
     <button class="start-btn btn btn-sm" id="startButton">Let's Play Again!</button>
 <!-- Found a css/html background for animated bubbles to release when this div unhides -->
     <div class="sticky">
@@ -64,13 +65,21 @@
 <!-- closing bubble div -->
 </div>
 <!-- closes endGame/hidden div -->
+<div class="row">
+    <div class="animalGroupBottom">
+        <img src="images/orca.png" alt="image of orca" class="animalImage" id="xImage">
+        <img src="images/sealion.png" alt="image of sea lion" class="animalImage" id="oImage">
+        <img src="images/rays.png" alt="image of three cownose rays" class="animalImage" id="x2Image">
+        <img src="images/seaturtle.png" alt="image of sea turtle" class="animalImage" id="o2Image">
+    </div>
+</div>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="index.js"></script>
 </body>
 <!-- footer class... -->
 <footer>
     <div class="footer">
-       <br><br><br><hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
+       <br><br><br><br><br><hr><p class="footer-text">Promineo Tech - Week 11 - Erin Brickman</p>
     </div>
 </footer>
 </html>
