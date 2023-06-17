@@ -116,28 +116,28 @@
   /* end of bubble animation css... i changed bubble colors and added a second color to random sections... not sure how to make it be at the bottom of the page when the winning alert pops up*/
 
  /* creating image variables0... if I can ever get them on there https://www.youtube.com/watch?v=kRQEkTHIEyU */
- :root { 
+:root { 
     --orca: url('/images/orca.png');
     --sealion: url('/images/sealion.png');
     --rays: url('/images/rays.png');
     --seaturtle: url('/images/seaturtle.png');
 }
- /* css for basic page */
- body {
+/* css for basic page */
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: radial-gradient(ellipse at top, #6473a2, transparent),            radial-gradient(ellipse at bottom, #79acd8, transparent);
-    background-color: rgb(172, 214, 229);
     font-family: "Coming Soon";
-    text-shadow: 2px 2px 2px white;
+    text-shadow: 1px 1px 1px white;
     color:rgb(20, 13, 105);
-  }
+}
 
 .centerButton {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 .header {
@@ -147,6 +147,12 @@
     font-size: 45pt;
     font-display: flex;
     text-shadow: 3px 3px 3px white;
+}
+
+.animalGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .animalImage {
@@ -177,14 +183,17 @@
     justify-content: center;
     align-items: center;
     color: rgb(20, 13, 105);
-    background-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 3px 3px 3px white;
+    background-color: rgba(255, 255, 255, 0.25);
 }
  
 #endGame {
     text-align: center;
+    border: 1px solid rgb(20, 13, 105);
+    background-color: rgba(255, 255, 255, 0.25);
     padding: 25px;
     margin: 25px;
-    color:rgb(20, 13, 105)
+    color:rgb(20, 13, 105);
 }
   
 .start-btn {
@@ -212,9 +221,7 @@
     opacity: 0.4;
 }
   
-.footer-text {
+.footer {
     font-size: x-small;
-    margin-left: 10px;
     font-style: italic;
-    align-items: left;
 }
